@@ -2,5 +2,7 @@
 config.php
 
 # Fonts (Not Open Source)
+ss-standard.js
+symbolset.css
 assets/fonts/
 assets/fonts/*

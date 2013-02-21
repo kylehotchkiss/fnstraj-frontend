@@ -1,7 +1,7 @@
 <?php 
 /**
  *
- * fnstraj frontend
+ * fnstraj frontend | Create Flight Page
  * Copyright 2011-2013 Kyle Hotchkiss
  * Released under the GPL
  *

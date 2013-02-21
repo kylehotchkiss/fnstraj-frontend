@@ -1,11 +1,9 @@
 <?php 
 /**
  *
- * fnstraj frontend | database proxy
+ * fnstraj frontend | Database Proxy
  * Copyright 2011-2013 Kyle Hotchkiss
  * Released under the GPL
- *
- * Rename to queue.php for consistancy.
  *
  */ 
  
