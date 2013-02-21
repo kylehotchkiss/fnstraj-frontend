@@ -12,7 +12,7 @@
 		//////////////////////////////
 		// PRE-WRITE INITIALIZATION //
 		//////////////////////////////
-		include "library/database.php";
+		include "database.php";
 		$couchdb = new Database();
 		
 		

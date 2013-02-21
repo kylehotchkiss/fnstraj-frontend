@@ -11,7 +11,7 @@
 		////////////////////
 		// Initalize View //
 		////////////////////
-		include "library/database.php";
+		include "database.php";
 		$couchdb = new Database();	
 		$flightID =  $_GET["id"];
 
@@ -74,7 +74,7 @@
 				  		
 							var map = new L.Map("map", { dragging: false, touchZoom: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, zoomControl: false, attributionControl: false, trackResize: false });
 							
-					  		map.setView(new L.LatLng(<?php echo $flightData->analysis->midpoint->latitude ?>, <?php echo $flightData->analysis->midpoint->longitude ?>), 7);
+					  		map.setView(new L.LatLng(<?php echo $flightData->analysis->midpoint->latitude ?>, <?php echo $flightData->analysis->midpoint->longitude ?>), 8);
 						  	
 						  	L.tileLayer('http://api.tiles.mapbox.com/v3/hotchkissmade.map-atljnf88/{z}/{x}/{y}.png').addTo(map);
 						  

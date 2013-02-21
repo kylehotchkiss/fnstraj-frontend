@@ -12,12 +12,12 @@
  *
  */ 
  
- 	include "../config.php";
+ 	include("config.php");
  
  	class database {
  	 
  		function read( $path ) {
-     		
+     		global $db_host, $db_port, $db_user, $db_pass;
      		
  			if ( substr( $path, -1 ) === "/" ) {
  				//////////////////////////////////////////////
