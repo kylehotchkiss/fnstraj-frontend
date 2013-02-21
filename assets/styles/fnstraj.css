@@ -1,0 +1,548 @@
+/*
+ *
+ * fnstraj frontend
+ * Copyright 2011-2013 Kyle Hotchkiss
+ * Released under the GPL
+ *
+ * http://www.colourlovers.com/palette/1598431/Unclean
+ *
+ */
+body {
+  background-attachment: fixed;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  border-top: 7px solid white;
+  color: #555555;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 30px 0 0 0;
+  -webkit-text-size-adjust: none;
+  text-rendering: optimizeLegibility; }
+
+a {
+  color: inherit; }
+
+p {
+  line-height: 1.6em;
+  margin: 0 0 1.6em 0; }
+
+label {
+  cursor: pointer; }
+  label i {
+    color: #d48173;
+    font-style: normal; }
+
+.header {
+  margin: 0 auto;
+  width: 480px; }
+
+.wrapper {
+  margin: 0 auto;
+  width: 960px; }
+
+.body {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-top: 7px solid white;
+  border-bottom: 7px solid white;
+  margin: 0 auto;
+  padding: 30px;
+  position: relative;
+  width: 720px; }
+  .body h3 {
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0 0 30px 0; }
+  .body p > span {
+    color: #7c9cac;
+    font-weight: bold; }
+
+.createFlight .fieldset {
+  border: 0;
+  padding: 13px 30px 30px 30px;
+  transition: opacity 0.1s linear;
+  -moz-transition: opacity 0.1s linear;
+  -webkit-transition: opacity 0.1s linear; }
+.createFlight .left, .createFlight .right {
+  float: left;
+  padding: 15px 0;
+  width: 300px; }
+.createFlight .left {
+  margin-right: 60px;
+  width: 280px; }
+.createFlight p.instructions {
+  color: #d48173;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline; }
+.createFlight p.terms {
+  font-size: 11px; }
+.createFlight input[type=text],
+.createFlight input[type=email],
+.createFlight input[type=number] {
+  border: 1px solid #dddddd;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  outline: 0;
+  padding: 5px; }
+  .createFlight input[type=text]:focus,
+  .createFlight input[type=email]:focus,
+  .createFlight input[type=number]:focus {
+    border-color: #999999; }
+.createFlight #stepOne .intension .radio {
+  float: left;
+  padding: 15px; }
+.createFlight #stepOne .intension .description {
+  color: #555555;
+  float: left;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 50px; }
+  .createFlight #stepOne .intension .description .model {
+    color: #d48173;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 50px; }
+.createFlight #stepTwo .geolocation {
+  display: table;
+  margin: 0 auto; }
+  .createFlight #stepTwo .geolocation label {
+    color: #555555;
+    float: left;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 38px; }
+  .createFlight #stepTwo .geolocation input[type=checkbox] {
+    float: left;
+    margin: 15px 0 0 15px; }
+.createFlight #stepTwo p, .createFlight #stepThree p {
+  margin: 0 0 1em 0; }
+.createFlight #stepTwo label, .createFlight #stepThree label {
+  color: #777777;
+  display: block;
+  font-size: 13px;
+  font-weight: 600; }
+  .createFlight #stepTwo label span, .createFlight #stepThree label span {
+    font-weight: 400;
+    font-style: italic; }
+.createFlight #stepTwo input[type=text],
+.createFlight #stepTwo input[type=number], .createFlight #stepThree input[type=text], .createFlight #stepThree input[type=number] {
+  width: 270px; }
+.createFlight #stepFour input[type=text],
+.createFlight #stepFour input[type=email] {
+  color: #555555;
+  display: table;
+  font-size: 22px;
+  margin: 0 auto;
+  padding: 10px;
+  width: 460px; }
+.createFlight #stepFive input[type=submit] {
+  background-color: #7c9cac;
+  border-radius: 1px;
+  color: white;
+  cursor: pointer;
+  border: 0;
+  display: table;
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+  margin: 0 auto;
+  padding: 10px 20px; }
+  .createFlight #stepFive input[type=submit]:hover {
+    background-color: #d48173; }
+
+.viewFlight #map {
+  height: 360px;
+  margin: 0 auto 30px auto;
+  width: 640px; }
+
+.columns .column {
+  border-right: 5px solid white;
+  float: left;
+  margin: 30px 0;
+  text-align: center;
+  width: 236px; }
+  .columns .column:last-child {
+    border-right: 0; }
+.columns .label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: lowercase; }
+.columns .value {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 60px; }
+.columns .caps {
+  text-transform: uppercase; }
+
+.footer {
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 15px 30px;
+  text-align: center;
+  width: 720px; }
+  .footer a {
+    color: inherit; }
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 1px;
+  visibility: hidden; }
+
+.shade {
+  position: relative; }
+
+.body:hover .fieldset {
+  opacity: 0.5;
+  opacity: 1; }
+
+/*
+ *
+ * fnstraj frontend | mobile stylesheet
+ * Copyright 2011-2013 Kyle Hotchkiss
+ * Released under the GPL
+ *
+ */
+@media all and (max-width: 320px) {
+  body {
+    font-size: 12px;
+    image-rendering: crisp-edges; }
+
+  .header {
+    width: 300px; }
+    .header img {
+      height: 125px;
+      width: 300px; }
+
+  .body {
+    margin: 0 10px;
+    padding: 15px;
+    width: 270px; }
+
+  .body:before, .body:after {
+    content: none; }
+
+  .createFlight .fieldset {
+    padding: 0; }
+  .createFlight h3 {
+    font-size: 16px;
+    text-align: center; }
+
+  .left, .right {
+    float: none; }
+
+  p.terms {
+    font-size: 8px; }
+
+  .footer {
+    font-size: 8px;
+    margin: 0 auto;
+    width: 300px; } }
+/*
+ *
+ * From the Leaflet project.
+ * Unsure of copyright.
+ * Unsure of licence (presumably open-source)
+ *
+ */
+.leaflet-map-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-pane,
+.leaflet-overlay-pane,
+.leaflet-shadow-pane,
+.leaflet-marker-pane,
+.leaflet-popup-pane,
+.leaflet-overlay-pane svg,
+.leaflet-zoom-box,
+.leaflet-image-layer {
+  position: absolute; }
+
+.leaflet-container {
+  overflow: hidden; }
+
+.leaflet-tile-pane, .leaflet-container {
+  -webkit-transform: translate3d(0, 0, 0); }
+
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
+
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+  display: block; }
+
+.leaflet-clickable {
+  cursor: pointer; }
+
+.leaflet-container img {
+  max-width: none !important; }
+
+.leaflet-tile-pane {
+  z-index: 2; }
+
+.leaflet-objects-pane {
+  z-index: 3; }
+
+.leaflet-overlay-pane {
+  z-index: 4; }
+
+.leaflet-shadow-pane {
+  z-index: 5; }
+
+.leaflet-marker-pane {
+  z-index: 6; }
+
+.leaflet-popup-pane {
+  z-index: 7; }
+
+.leaflet-zoom-box {
+  width: 0;
+  height: 0; }
+
+.leaflet-tile {
+  visibility: hidden; }
+
+.leaflet-tile-loaded {
+  visibility: inherit; }
+
+a.leaflet-active {
+  outline: 2px solid orange; }
+
+.leaflet-control {
+  position: relative;
+  z-index: 7; }
+
+.leaflet-top,
+.leaflet-bottom {
+  position: absolute; }
+
+.leaflet-top {
+  top: 0; }
+
+.leaflet-right {
+  right: 0; }
+
+.leaflet-bottom {
+  bottom: 0; }
+
+.leaflet-left {
+  left: 0; }
+
+.leaflet-control {
+  float: left;
+  clear: both; }
+
+.leaflet-right .leaflet-control {
+  float: right; }
+
+.leaflet-top .leaflet-control {
+  margin-top: 10px; }
+
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 10px; }
+
+.leaflet-left .leaflet-control {
+  margin-left: 10px; }
+
+.leaflet-right .leaflet-control {
+  margin-right: 10px; }
+
+.leaflet-control-zoom, .leaflet-control-layers {
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px; }
+
+.leaflet-control-zoom {
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.25); }
+
+.leaflet-control-zoom a {
+  background-color: rgba(255, 255, 255, 0.75); }
+
+.leaflet-control-zoom a, .leaflet-control-layers a {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block; }
+
+.leaflet-control-zoom a {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  width: 19px;
+  height: 19px; }
+
+.leaflet-control-zoom a:hover {
+  background-color: white; }
+
+.leaflet-big-buttons .leaflet-control-zoom a {
+  width: 27px;
+  height: 27px; }
+
+.leaflet-control-zoom-in {
+  background-image: url(/images/zoom-in.png);
+  margin-bottom: 5px; }
+
+.leaflet-control-zoom-out {
+  background-image: url(/images/zoom-out.png); }
+
+.leaflet-control-layers {
+  -moz-box-shadow: 0 0 7px #999999;
+  -webkit-box-shadow: 0 0 7px #999999;
+  box-shadow: 0 0 7px #999999;
+  background: #f8f8f9; }
+
+.leaflet-control-layers a {
+  background-image: url(/images/layers.png);
+  width: 36px;
+  height: 36px; }
+
+.leaflet-big-buttons .leaflet-control-layers a {
+  width: 44px;
+  height: 44px; }
+
+.leaflet-control-layers .leaflet-control-layers-list,
+.leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+  display: none; }
+
+.leaflet-control-layers-expanded .leaflet-control-layers-list {
+  display: block;
+  position: relative; }
+
+.leaflet-control-layers-expanded {
+  padding: 6px 10px 6px 6px;
+  font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  background: white; }
+
+.leaflet-control-layers input {
+  margin-top: 2px;
+  position: relative;
+  top: 1px; }
+
+.leaflet-control-layers label {
+  display: block; }
+
+.leaflet-control-layers-separator {
+  height: 0;
+  border-top: 1px solid #dddddd;
+  margin: 5px -10px 5px -6px; }
+
+.leaflet-container .leaflet-control-attribution {
+  margin: 0;
+  padding: 0 5px;
+  font: 11px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 0 0 7px #cccccc;
+  -webkit-box-shadow: 0 0 7px #cccccc;
+  box-shadow: 0 0 7px #cccccc; }
+
+.leaflet-fade-anim .leaflet-tile {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear; }
+
+.leaflet-fade-anim .leaflet-tile-loaded {
+  opacity: 1; }
+
+.leaflet-fade-anim .leaflet-popup {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear; }
+
+.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {
+  opacity: 1; }
+
+.leaflet-zoom-anim .leaflet-tile {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none; }
+
+.leaflet-zoom-anim .leaflet-objects-pane {
+  visibility: hidden; }
+
+.leaflet-popup {
+  position: absolute;
+  text-align: center;
+  -webkit-transform: translate3d(0, 0, 0); }
+
+.leaflet-popup-content-wrapper {
+  padding: 1px;
+  text-align: left; }
+
+.leaflet-popup-content {
+  margin: 19px; }
+
+.leaflet-popup-tip-container {
+  margin: 0 auto;
+  width: 40px;
+  height: 16px;
+  position: relative;
+  overflow: hidden; }
+
+.leaflet-popup-tip {
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  margin: -8px auto 0;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.leaflet-popup-close-button {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 10px;
+  height: 10px;
+  overflow: hidden; }
+
+.leaflet-popup-content p {
+  margin: 18px 0; }
+
+.leaflet-container {
+  background: #dddddd; }
+
+.leaflet-container a {
+  color: #0078a8; }
+
+.leaflet-zoom-box {
+  border: 2px dotted #0055ff;
+  background: white;
+  opacity: 0.5; }
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: white;
+  box-shadow: 0 1px 10px #888888;
+  -moz-box-shadow: 0 1px 10px #888888;
+  -webkit-box-shadow: 0 1px 14px #999999; }
+
+.leaflet-popup-content-wrapper {
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px; }
+
+.leaflet-popup-content {
+  font: 12px/1.4 "Helvetica Neue", Arial, Helvetica, sans-serif; }
+
+.leaflet-popup-close-button {
+  background: white url(/images/popup-close.png); }

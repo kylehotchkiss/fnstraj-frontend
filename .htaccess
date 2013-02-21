@@ -1,0 +1,6 @@
+# MediaTemple is rediculous
+Options +FollowSymLinks
+
+# REWRITE RULES
+RewriteEngine On
+RewriteRule ^view/([^/]*)$ /view.php?id=$1 [L]
