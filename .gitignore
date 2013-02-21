@@ -1,2 +1,6 @@
 # Protect Database Creds
 config.php
+
+# Fonts (Not Open Source)
+assets/fonts/
+assets/fonts/*

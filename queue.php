@@ -9,8 +9,6 @@
  *
  */ 
  
-
- 
  	
 	if ( $_POST["interfaceKey"] == "z6kDgFNJX977di" ) {
 		//////////////////////////////
@@ -19,10 +17,14 @@
 		include "library/database.php";
 		$couchdb = new Database();
 		
+		
 		$now = new DateTime();
-	
 		$flightID = $now->getTimestamp();
 	
+	
+		/////////////////////////////////
+		// FLIGHT OBJECT ESTABLISHMENT //
+		/////////////////////////////////
 		$content = array(
 			"parameters" => array(
 				"flags" => array(
@@ -51,12 +53,19 @@
 			)	
 		);
 		
+		
+		//////////////////////////////////
+		// WRITE QUEUE ITEM TO DATABASE //
+		//////////////////////////////////
 		$response = $couchdb->write('/queue/' . $flightID, $content);
+
 
 		///////////////////////
 		// START PAGE OUTPUT //
 		///////////////////////
+		$pageTitle = "Added to Queue";
 		include "includes/header.php";
+
 
 		if ( $response ) {
 			//////////////////////////////////////////////////
