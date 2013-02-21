@@ -70,7 +70,7 @@
 			// CASE: SUCCESSFUL HTTP, EVALUATE THE RESPONSE // 
 			//////////////////////////////////////////////////
 			
-			$status = json_decode( $response );
+			$status = $response;
 			
 			if ( $status->ok && $status->id == $flightID ) {
 				/////////////////////////////////////
@@ -139,9 +139,15 @@
 <?php					
 			} 	
 			
-			include "includes/footer.php";
-				
-		} 	
+		} else {
+?>	
+		
+			unspec error, working on it
+			
+<?php			
+		}
+		
+		include "includes/footer.php";
 	} else {
 		///////////////////////////
 		// CASE: DATA NOT POSTED //

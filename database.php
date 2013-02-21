@@ -57,7 +57,7 @@
  	
  		
  		function write( $path, $content ) {
-
+     		global $db_host, $db_port, $db_user, $db_pass;
      		
  			$database = curl_init();
  			
@@ -74,7 +74,7 @@
  				// CASE: CURL REQUEST SUCCESSFUL //
  				///////////////////////////////////
  				
- 				$results = json_encode( $response );
+ 				$results = json_decode( $response );
  			
  				return $results;
  			} else {
