@@ -42,7 +42,7 @@ function checkUpdates( flightID, queueUpdateCallback, callback ) {
 		 
 		 	queueLength(flightID, queueUpdateCallback);
 		 
-		 	database.read( "/fnstraj-flights/" + flightID, function( data, error ) {
+		 	database.read( "/fnstraj-flights/" + flightID, false, function( data, error ) {
 		 
 		 		if ( typeof data.parameters !== "undefined" ) {
 		 
@@ -67,7 +67,7 @@ var queueLength = function( flightID, callback ) {
 	// GET AMOUNT OF ITEMS IN QUEUE BEFORE FLIGHT //
 	////////////////////////////////////////////////
  
-	database.read('/fnstraj-queue/', function( data, error ) {
+	database.read('/fnstraj-queue/', false, function( data, error ) {
 	
 		if ( typeof error !== "undefined" && error ) { 
 			///////////////////////////////////////////

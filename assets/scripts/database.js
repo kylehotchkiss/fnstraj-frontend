@@ -19,11 +19,15 @@ var db_root = "http://" + db_host + ":" + db_port;
 ///////////////////////////
 var database = {}; // Uncertain if we need namespacing
 
-database.read = function( path, callback ) {
+database.read = function( path, archive, callback ) {
     if ( path.substr(-1) === "/" ) {
         // CASE: URL is a listing OR view... what shall we do
 
         path += "_all_docs?ascending=true";
+        
+        if ( archive ) {
+	        path += "&include_docs=true";
+        }
     }
     
     jQuery.ajax( db_root + path, {
