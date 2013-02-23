@@ -3,4 +3,9 @@ Options +FollowSymLinks
 
 # REWRITE RULES
 RewriteEngine On
+
+# View Page	- /view/%id%
 RewriteRule ^view/([^/]*)$ /view.php?id=$1 [L]
+
+# Export Page - /export/%format%/%id%
+RewriteRule ^export/([^/]*)/([^/]*)$ /export.php?format=$1&id=$2 [L]

@@ -126,6 +126,11 @@
 							</div>
 						</div>
 					
+						<div class="exports">
+							<a href="/export/kml/<?= $flightID; ?>">View in Google Earth</a>
+							<a href="/export/json/<?= $flightID; ?>">Download JSON export</a>
+						</div>
+					
 					</div>
 				</div>
 
@@ -136,9 +141,11 @@
 				// CASE: FLIGHT DOES NOT EXIST //
 				/////////////////////////////////
 ?>
-
-	Flight does not exist.
-
+				<script src="/assets/scripts/fnstraj-queue.js"></script>
+	
+				Flight does not exist.
+				
+				<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />
 <?php
 			}
 		} else {

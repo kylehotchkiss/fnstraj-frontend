@@ -86,8 +86,6 @@ var queueLength = function( flightID, callback ) {
 				}				
 			}
 			
-			console.log( index );
-			
 			if ( index == -1 ) {
 				//////////////////////////////
 				// CASE: NOT FOUND IN QUEUE //

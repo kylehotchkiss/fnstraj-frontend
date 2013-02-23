@@ -14,6 +14,9 @@
 			<p> 
 				Welcome to <span>fnstraj</span>, a new balloon trajectory prediction service. This service helps you find out where the stuff you're sending up with your weather balloon will land. That way you'll know if you're going to "accidentally" lose your expensive gear in the ocean or a military base (which is probably bad!) This is currently alpha-level software and should be used with discretion. If it is storming where you are currently launching <strong>fnstraj cannot help you</strong> (due to chaos in wind data).
 			</p>
+			<p>
+				yeahhhhh GFS is kinda sorta not a good model to judge winds from, use GFSHD or RAP for reasonable predictions
+			</p>
 		
 			<form class="setup" method="post" action="/queue.php"><div class="createFlight">
 				
