@@ -19,7 +19,7 @@
 		/////////////////////////////
 		// GRAB DATA FROM DATABASE //
 		/////////////////////////////
-		$flightData = $couchdb->read("/flights/" . $flightID );
+		$flightData = $couchdb->read("/fnstraj-flights/" . $flightID );
 
 		
 		///////////////////////

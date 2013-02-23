@@ -21,7 +21,7 @@
 	 		/////////////////////
 	 		// GET FLIGHT DATA //
 	 		/////////////////////
-	 		$flightData = $couchdb->read("/flights/" . $flightID );
+	 		$flightData = $couchdb->read("/fnstraj-flights/" . $flightID );
 	 		
 	 		
 	 		if ( $flightData !== false ) {

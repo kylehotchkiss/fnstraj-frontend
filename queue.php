@@ -55,7 +55,7 @@
 		//////////////////////////////////
 		// WRITE QUEUE ITEM TO DATABASE //
 		//////////////////////////////////
-		$response = $couchdb->write('/queue/' . $flightID, $content);
+		$response = $couchdb->write('/fnstraj-queue/' . $flightID, $content);
 
 
 		///////////////////////
