@@ -108,22 +108,22 @@
 							
 							<p>
 								<label for="lift">Free Lift<i>*</i> <span>(grams-force)</span></label>
-								<input type="number" name="lift" value="0" min="0" required />
+								<input type="number" name="lift" value="0" min="0" step="0.00001" required />
 							</p>
 							
 							<p>
-								<label for="burst">Burst Altitude<i>*</i> <span>(meters)</span></label>
-								<input type="number" name="burst" value="30000" min="0" required />
+								<label for="burst">Burst Altitude<i>*</i> <span>(metres)</span></label>
+								<input type="number" name="burst" value="30000" min="0" step="0.00001" required />
 							</p>
 							
 							<p>
-								<label for="launchRadius">Launch Radius<i>*</i> <span>(meters)</span></label>
-								<input type="number" name="launchRadius" value="0" min="0" required />
+								<label for="launchRadius">Launch Radius<i>*</i> <span>(metres)</span></label>
+								<input type="number" name="launchRadius" value="0" min="0" step="0.00001" required />
 							</p>
 							
 							<p>
-								<label for="burstRadius">Burst Radius<i>*</i> <span>(meters)</span></label>
-								<input type="number" name="burstRadius" value="0" min="0" required />
+								<label for="burstRadius">Burst Radius<i>*</i> <span>(metres)</span></label>
+								<input type="number" name="burstRadius" value="0" min="0" step="0.00001" required />
 							</p>
 						</div>
 						<div class="right half">
@@ -133,11 +133,11 @@
 							
 							<p>
 								<label for="weight">Payload Weight<i>*</i> <span>(grams)</span></label>
-								<input type="number" name="weight" value="0" min="0" required />
+								<input type="number" name="weight" value="0" min="0" step="0.00001" required />
 							</p>
 							<p>
-								<label for="radius">Parachute Radius<i>*</i> <span>(meters)</span></label>
-								<input type="number" name="chuteRadius" value="0" min="0" required />
+								<label for="radius">Parachute Radius<i>*</i> <span>(metres)</span></label>
+								<input type="number" name="chuteRadius" value="0" min="0" step="0.00001" required />
 							</p>
 																					
 						</div>

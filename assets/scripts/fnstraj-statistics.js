@@ -18,6 +18,8 @@ jQuery(document).ready(function() {
          
          var perModelAverages = perModel(data);
          
+         jQuery(".amount").html(data.rows.length);
+         
          var averagePredictorTime = new Highcharts.Chart({
             chart: {
                 renderTo: 'averagePredictorTime',
