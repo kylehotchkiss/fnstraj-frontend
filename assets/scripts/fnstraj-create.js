@@ -42,8 +42,8 @@ jQuery("document").ready(function() {
 				jQuery(".geolocation input[type=checkbox]").change(function() {
 						
 					if ( jQuery(".geolocation input[type=checkbox]").is(':checked') ) {
-						jQuery("input[name=latitude]").attr("value", latitude);
-						jQuery("input[name=longitude]").attr("value", longitude);
+						jQuery("input[name=latitude]").attr("value", latitude.toFixed(5));
+						jQuery("input[name=longitude]").attr("value", longitude.toFixed(5));
 						jQuery("#exactLocation").addClass("shade");
 					} else {
 						jQuery("input[name=latitude], input[name=longitude]").attr("value", "");							
