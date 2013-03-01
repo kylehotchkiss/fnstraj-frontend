@@ -23,10 +23,16 @@
 		/////////////////////////////////
 		// FLIGHT OBJECT ESTABLISHMENT //
 		/////////////////////////////////
+		if ( $_POST["spot"] != "" ) {
+			$spot = $_POST["spot"];
+		} else {
+			$spot = false;
+		}
+		
 		$content = array(
 			"parameters" => array(
 				"flags" => array(
-					"spot" => false,
+					"spot" => $spot,
 					"active" => false,
 					"lastActivity" => false
 				), "meta" => array(
@@ -77,6 +83,7 @@
 				// CASE: SUCCESSFUL DATABASE WRITE //
 				/////////////////////////////////////
 ?>
+			<script src="/assets/scripts/database.js"></script>
 			<script src="/assets/scripts/fnstraj-queue.js"></script>
 			<h3>
 				Added to Queue 

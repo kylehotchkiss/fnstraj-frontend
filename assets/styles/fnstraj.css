@@ -1,4 +1,4 @@
-/*
+/**
  *
  * fnstraj frontend
  * Copyright 2011-2013 Kyle Hotchkiss
@@ -11,7 +11,7 @@ body {
   background-attachment: fixed;
   background-image: url("http://cdn.fnstraj.org/images/background.jpg");
   background-size: cover;
-  border-top: 7px solid white;
+  border-top: 7px solid #FFFFFF;
   color: #555555;
   font-family: "Helvetica Neue", "Arial", sans-serif;
   font-size: 15px;
@@ -31,7 +31,7 @@ p {
 label {
   cursor: pointer; }
   label i {
-    color: #d48173;
+    color: #D48173;
     font-style: normal; }
 
 .header {
@@ -43,10 +43,10 @@ label {
   width: 960px; }
 
 .body {
-  background-color: white;
+  background-color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.7);
-  border-top: 7px solid white;
-  border-bottom: 7px solid white;
+  border-top: 7px solid #FFFFFF;
+  border-bottom: 7px solid #FFFFFF;
   margin: 0 auto;
   padding: 30px;
   position: relative;
@@ -56,15 +56,15 @@ label {
     font-size: 17px;
     margin: 0 0 30px 0; }
   .body p > span {
-    color: #7c9cac;
+    color: #7C9CAC;
     font-weight: bold; }
 
 .createFlight .fieldset {
   border: 0;
   padding: 13px 30px 30px 30px;
-  transition: opacity 0.1s linear;
-  -moz-transition: opacity 0.1s linear;
-  -webkit-transition: opacity 0.1s linear; }
+  transition: opacity .1s linear;
+  -moz-transition: opacity .1s linear;
+  -webkit-transition: opacity .1s linear; }
 .createFlight .left, .createFlight .right {
   float: left;
   padding: 15px 0;
@@ -73,7 +73,7 @@ label {
   margin-right: 60px;
   width: 280px; }
 .createFlight p.instructions {
-  color: #d48173;
+  color: #D48173;
   font-weight: bold;
   text-align: center;
   text-decoration: underline; }
@@ -81,8 +81,10 @@ label {
   font-size: 11px; }
 .createFlight input[type=text],
 .createFlight input[type=email],
+.createFlight input[type=range],
 .createFlight input[type=number] {
-  border: 1px solid #dddddd;
+  border: 1px solid #DDDDDD;
+  color: #333333;
   font-family: "Helvetica Neue", "Arial", sans-serif;
   font-size: 17px;
   font-weight: 300;
@@ -90,6 +92,7 @@ label {
   padding: 5px; }
   .createFlight input[type=text]:focus,
   .createFlight input[type=email]:focus,
+  .createFlight input[type=range]:focus,
   .createFlight input[type=number]:focus {
     border-color: #999999; }
 .createFlight #stepOne .intension .radio {
@@ -102,7 +105,7 @@ label {
   font-weight: 200;
   line-height: 50px; }
   .createFlight #stepOne .intension .description .model {
-    color: #d48173;
+    color: #D48173;
     font-size: 15px;
     font-weight: normal;
     line-height: 50px; }
@@ -140,9 +143,9 @@ label {
   padding: 10px;
   width: 460px; }
 .createFlight #stepFive input[type=submit] {
-  background-color: #7c9cac;
+  background-color: #7C9CAC;
   border-radius: 1px;
-  color: white;
+  color: #FFFFFF;
   cursor: pointer;
   border: 0;
   display: table;
@@ -152,7 +155,7 @@ label {
   margin: 0 auto;
   padding: 10px 20px; }
   .createFlight #stepFive input[type=submit]:hover {
-    background-color: #d48173; }
+    background-color: #D48173; }
 
 .viewFlight #map {
   height: 360px;
@@ -160,7 +163,7 @@ label {
   width: 640px; }
 
 .columns .column {
-  border-right: 5px solid white;
+  border-right: 5px solid #FFFFFF;
   float: left;
   margin: 30px 0;
   text-align: center;
@@ -179,7 +182,7 @@ label {
   text-transform: uppercase; }
 
 .footer {
-  color: white;
+  color: #FFFFFF;
   font-size: 11px;
   font-weight: bold;
   margin: 0 auto;
@@ -200,8 +203,15 @@ label {
   position: relative; }
 
 .body:hover .fieldset {
-  opacity: 0.5;
-  opacity: 1; }
+  opacity: .5; }
+  .body:hover .fieldset:hover {
+    opacity: 1; }
+
+.parsley-error-list {
+  display: none !important; }
+
+.parsley-error {
+  border: 1px solid #d48173 !important; }
 
 /*
  *

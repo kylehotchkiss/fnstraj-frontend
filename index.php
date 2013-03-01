@@ -10,15 +10,17 @@
 	$pageTitle = "Create Flight";
  	include "includes/header.php"; 
 ?>
+			<script src="/assets/scripts/garlic.js"></script>
+			<script src="/assets/scripts/parsley.js"></script>
 		 	<script src="/assets/scripts/fnstraj-create.js"></script>
 			<p> 
 				Welcome to <span>fnstraj</span>, a new balloon trajectory prediction service. This service helps you find out where the stuff you're sending up with your weather balloon will land. That way you'll know if you're going to "accidentally" lose your expensive gear in the ocean or a military base (which is probably bad!) This is currently alpha-level software and should be used with discretion. If it is storming where you are currently launching <strong>fnstraj cannot help you</strong> (due to chaos in wind data).
 			</p>
 			<p>
-				yeahhhhh GFS is kinda sorta not a good model to judge winds from, use GFSHD or RAP for reasonable predictions
+				<em>Currently, GFS does not offer accurate enough results for predictions. Please try GFSHD or RAP instead.</em>
 			</p>
 		
-			<form class="setup" method="post" action="/queue.php"><div class="createFlight">
+			<form class="setup" method="post" action="/queue.php" data-persist="garlic" data-destroy="false" data-validate="parsley" novalidate><div class="createFlight">
 				
 				<input type="hidden" name="interfaceKey" value="z6kDgFNJX977di" />
 				
@@ -84,7 +86,7 @@
 								<input type="number" name="longitude" step="0.000000000000001" required />
 							</p><p>
 								<label for="altitude">Altitude<i>*</i> <span>(meters)</span></label>
-								<input type="number" name="altitude" step="1" value="0" required />
+								<input type="number" name="altitude" step="1" min="0" max="44307" required />
 							</p>
 							
 							<label for="useGeo" class="shade"></label>
@@ -108,22 +110,22 @@
 							
 							<p>
 								<label for="lift">Free Lift<i>*</i> <span>(grams-force)</span></label>
-								<input type="number" name="lift" value="0" min="0" step="0.00001" required />
+								<input type="number" name="lift" min="0" step="0.00001" data-trigger="keyup" required />
 							</p>
 							
 							<p>
 								<label for="burst">Burst Altitude<i>*</i> <span>(metres)</span></label>
-								<input type="number" name="burst" value="30000" min="0" step="0.00001" required />
+								<input type="number" name="burst" min="0" max="44307" step="0.00001" data-trigger="keyup" required />
 							</p>
 							
 							<p>
 								<label for="launchRadius">Launch Radius<i>*</i> <span>(metres)</span></label>
-								<input type="number" name="launchRadius" value="0" min="0" step="0.00001" required />
+								<input type="number" name="launchRadius" min="0" step="0.00001" data-trigger="keyup" required />
 							</p>
 							
 							<p>
 								<label for="burstRadius">Burst Radius<i>*</i> <span>(metres)</span></label>
-								<input type="number" name="burstRadius" value="0" min="0" step="0.00001" required />
+								<input type="number" name="burstRadius" min="0" step="0.00001" data-trigger="keyup" required />
 							</p>
 						</div>
 						<div class="right half">
@@ -133,11 +135,11 @@
 							
 							<p>
 								<label for="weight">Payload Weight<i>*</i> <span>(grams)</span></label>
-								<input type="number" name="weight" value="0" min="0" step="0.00001" required />
+								<input type="number" name="weight" min="0" step="0.00001" data-trigger="keyup" required />
 							</p>
 							<p>
 								<label for="radius">Parachute Radius<i>*</i> <span>(metres)</span></label>
-								<input type="number" name="chuteRadius" value="0" min="0" step="0.00001" required />
+								<input type="number" name="chuteRadius" min="0" step="0.00001" data-trigger="keyup" required />
 							</p>
 																					
 						</div>
@@ -152,8 +154,8 @@
 						</p>
 						
 						<p>
-							<label for="spot">SPOT URL</label>
-							<input type="text" name="spot" style="width:648px" value="this feature is in development :)" disabled />
+							<label for="spot">SPOT Shared Page ID</label>
+							<input type="text" name="spot" style="width:648px" placeholder="this feature is in development :)" />
 						</p>
 							
 						</p>

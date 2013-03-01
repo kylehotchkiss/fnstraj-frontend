@@ -12,12 +12,7 @@ jQuery("document").ready(function() {
 
 	////////////////////////
 	// CREATE FLIGHT PAGE //
-	////////////////////////
-		
-	// Browsers will nag from old data sometimes, breaking our location support.
-	jQuery("input[type=checkbox]").attr("checked", false);
-		
-	
+	////////////////////////	
 	if ( navigator.geolocation ) {
 		navigator.geolocation.getCurrentPosition(
 			function( position ) {
@@ -28,28 +23,26 @@ jQuery("document").ready(function() {
 				var longitude = position.coords.longitude;
 					
 					
-				jQuery(".geolocation label").html(latitude.toFixed(2) + ", " + longitude.toFixed(2));
+				jQuery(".geolocation label").html(latitude.toFixed(5) + ", " + longitude.toFixed(5));
 					
 				//
 				// Now let's grab the location name. <3UX.
 				// Progressive enhancement (as coordiantes are still shown if this fails.
 				//
-				
-				// location name, if possible, goes here. Google api, probs :(
-				
 				jQuery(".geolocation input[type=checkbox]").removeAttr("disabled");
 				
+				if ( jQuery(".geolocation input[type=checkbox]").is(':checked') ) {
+					jQuery("input[name=latitude]").val(latitude.toFixed(5));
+					jQuery("input[name=longitude]").val(longitude.toFixed(5));
+				}
+				
 				jQuery(".geolocation input[type=checkbox]").change(function() {
-						
 					if ( jQuery(".geolocation input[type=checkbox]").is(':checked') ) {
-						jQuery("input[name=latitude]").attr("value", latitude.toFixed(5));
-						jQuery("input[name=longitude]").attr("value", longitude.toFixed(5));
-						jQuery("#exactLocation").addClass("shade");
+						jQuery("input[name=latitude]").val(latitude.toFixed(5));
+						jQuery("input[name=longitude]").val(longitude.toFixed(5));
 					} else {
-						jQuery("input[name=latitude], input[name=longitude]").attr("value", "");							
-						jQuery("#exactLocation").removeClass("shade");							
+						jQuery("input[name=latitude], input[name=longitude]").val("");	
 					}
-					
 				});
 				
 			}, function ( error ) {

@@ -69,7 +69,7 @@
 				<coordinates>
 <?php						
 
-						foreach ( $flightData->prediction[0] as $frame ) {
+						foreach ( $flightData->prediction as $frame ) {
 							echo "				    " . $frame->longitude . "," . $frame->latitude . "," . $frame->altitude . "\n";
 						}
 
@@ -88,7 +88,7 @@
 						header("Content-Type: application/json");	
 						header("Content-disposition: attachment;filename=fnstraj-" . $flightID . ".json");											
 						
-						echo json_encode( $flightData->parameters );
+						echo json_encode( $flightData );
 					} else if ( $_GET["format"] == "csv" ) {
 						/////////////////////////////////////////
 						// CSV EXPORT FOR EXCEL-BASED ANALYSIS //

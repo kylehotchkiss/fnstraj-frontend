@@ -39,13 +39,14 @@
 				/////////////////////////////////////////
 				// GENERATE JS FRIENDLY LIST OF POINTS //
 				/////////////////////////////////////////
-				foreach ( $flightData->prediction[0] as $frame ) {
+				foreach ( $flightData->prediction as $frame ) {
 					$frames .= "[" . $frame->longitude . ", " . $frame->latitude . "], ";
 				}
 				
 				$frames = substr( $frames, 0, strlen($frames) - 2 ); 
 		
 ?>
+				<script src="/assets/scripts/leaflet.js"></script>		
 				<?php if ( $flightData->parameters->meta->program != "" && $flightData->parameters->meta->name != "" ) { ?>
 				
 					<h3>Flight Prediction for <?php echo $flightData->parameters->meta->program . " " . $flightData->parameters->meta->name; ?> </h3>
@@ -141,9 +142,10 @@
 				// CASE: FLIGHT DOES NOT EXIST //
 				/////////////////////////////////
 ?>
+				<script src="/assets/scripts/database.js"></script>
 				<script src="/assets/scripts/fnstraj-queue.js"></script>
 	
-				Flight does not exist.
+				Flight does not {yet} exist - If you just created it, this page will update when it is complete!
 				
 				<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />
 <?php

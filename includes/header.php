@@ -19,11 +19,6 @@
 		<link href="/assets/styles/fnstraj.css" rel="stylesheet" />	
 		<link href="/assets/styles/symbolset.css" rel="stylesheet" />
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="/assets/scripts/jQuery.form.js"></script>
-		<script src="/assets/scripts/leaflet.js"></script>		
-		<script src="/assets/scripts/database.js"></script>
-		
-		
 		<script src="/assets/scripts/ss-standard.js"></script>
 		<script type="text/javascript" src="//use.typekit.net/zpr0vqp.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
