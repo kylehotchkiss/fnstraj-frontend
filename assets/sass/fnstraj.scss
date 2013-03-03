@@ -4,8 +4,6 @@
  * Copyright 2011-2013 Kyle Hotchkiss
  * Released under the GPL
  *
- * http://www.colourlovers.com/palette/1598431/Unclean
- *
  */
 
 
@@ -13,277 +11,123 @@
 // BASELINE STYLES & LAYOUT //
 //////////////////////////////
 body {
-	background-attachment: fixed;
-	background-image: url('http://cdn.fnstraj.org/images/background.jpg');
-	background-size: cover;
-	border-top: 7px solid #FFFFFF;
-	color: #555555;
-	font-family: "Helvetica Neue", "Arial", sans-serif;
-	font-size: 15px;
-	-webkit-font-smoothing: antialiased;
-	margin: 0;
-	padding: 30px 0 0 0;
+	color: #FFFFFF;
+	font-family: "Georgia", serif;
+	font-size: 20px;
+	-webkit-font-smoothing: antialiased;				
+	margin: 0px;
 	-webkit-text-size-adjust: none;
 	text-rendering: optimizeLegibility;
 }
-	
 
-a { 
+a {
 	color: inherit;
 }
-	
+
+
+h1, h2, h2, h2, h5, h6, p {
+	margin: 0 0 32px 0;
+	text-align: center;
+}
+			
 p {
 	line-height: 1.6em;
-	margin: 0 0 1.6em 0;
-}
-	
-label {
-	cursor: pointer;
-
-	i {
-		color: #D48173;
-		font-style: normal;
+			
+	&:last-of-type {
+		margin: 0;
 	}
 }
-
-.header {
-	margin: 0 auto;
-	width: 480px;
-}
-	
+			
 .wrapper {
 	margin: 0 auto;
-	width: 960px;
+	padding: 90px;
+	width: 800px;
 }
 
-.body {
-	background-color: #FFFFFF;
-	background-color: rgba(255,255,255,.7);
-	border-top: 7px solid #FFFFFF;
-	border-bottom: 7px solid #FFFFFF;
-	margin: 0 auto;
-	padding: 30px;
-	position: relative;
-	width: 720px;
-	
-	h3 {
-		font-weight: bold;
-		font-size: 17px;
-		margin: 0 0 30px 0;
-	}
-		
-	p > span {
-		color: #7C9CAC;
-		font-weight: bold;
+.columns {
+	padding-top: 60px; /* GLITCH */
+				
+	.column {
+		float:left;
+		width:260px;
 	}
 }
-	
 
-////////////////////////
-// CREATE FLIGHT PAGE //
-////////////////////////
-.createFlight {
-	.fieldset {
-		border: 0;
-		padding: 13px 30px 30px 30px;
-		transition: opacity .1s linear;
-		-moz-transition: opacity .1s linear;
-		-webkit-transition: opacity .1s linear;
+
+////////////////////////////////////////
+// SECTION (PAGE + CALCULATOR) STYLES //
+////////////////////////////////////////
+.header {
+	font-size: 11px;
+	font-weight: bold;
+
+	a {
+		text-decoration: none;
 	}
+
+	.wrapper {
+		padding: 10px 0;
+	}
+	
+	.logo {
+		float:left;
+	}
+	
+	ul {
+		float:right;
+		margin: 0;
+	
+		li {
+			display: inline;
+			margin-left: 15px; 
+		}
+	}
+	
+}
 		
-	.left, .right {
+.header, .introduction, .queue, .stepTwo, .stepFour { 
+	background-color: #1A6795;
+}
+			
+.flight, .stepOne, .stepThree, {
+	background-color: #12496a;
+}
+			
+.intensions {
+	display: table;
+	margin: 30px auto 0 auto;
+			
+	input[type=radio] {
 		float: left;
-		padding: 15px 0;
-		width: 300px;
+		margin: 20px;
 	}
-
-	.left {
-		margin-right: 60px;
-		width: 280px;
-	}
-	
-	
-	//////////////////////////
-	// DISPLAY & TYPOGRAPHY //
-	//////////////////////////
-	p.instructions {
-		color: #D48173;
-		font-weight: bold;
-		text-align: center;
-		text-decoration: underline;
-	}
-	
-	p.terms {
-		font-size: 11px;
-	}		
-		
-	input[type=text],
-	input[type=email], 
-	input[type=range],
-	input[type=number] {
-		border: 1px solid #DDDDDD;
-		color: #333333;
-		font-family: "Helvetica Neue", "Arial", sans-serif;
-		font-size: 17px;
-		font-weight: 300;		
-		outline: 0;
-		padding: 5px;
-		
-		&:focus {
-			border-color: #999999;
-		}
-	}
-
-	#stepOne {
-		.intension {
-			.radio {
-				float: left;
-				padding: 15px;
-			}
-				
-			.description {
-				color: #555555;
-				float: left;
-				font-size: 22px;
-				font-weight: 200;
-				line-height: 50px;
-				
-				.model {
-					color: #D48173;
-					font-size: 15px;
-					font-weight: normal;
-					line-height: 50px;
-				}
-			}
-		}
-	}
-
-	#stepTwo {
-		.geolocation {
-			display: table;
-			margin: 0 auto;
-
-			label {
-				color: #555555;
-				float: left;
-				font-size: 22px;
-				font-weight: 200;
-				line-height: 38px;
-			}
-
-			input[type=checkbox] {
-				float: left;
-				margin: 15px 0 0 15px;
-			}
-		}
-	}
-
-	#stepTwo, #stepThree {
-		p {
-			margin: 0 0 1em 0;
-		}
-
-		label {
-			color: #777777;
-			display: block;
+					
+	label {
+		display: table;
+		font-size: 25px;
+		font-weight: 300;
+		float: left;
+		line-height: 55px;
+		text-align: left;
+			
+		span {
+			color: #1A6795;
 			font-size: 13px;
 			font-weight: 600;
-			
-			span {
-				font-weight: 400;
-				font-style: italic;
-			}
-		}
-				
-		input[type=text],
-		input[type=number] {
-			width: 270px;
-		}
-	}
-
-	#stepFour {
-		input[type=text],
-		input[type=email] {
-			color: #555555;
-			display: table;
-			font-size: 22px;
-			margin: 0 auto;
-			padding: 10px;
-			width: 460px;
-		}
-	}	
-		
-	#stepFive {
-		input[type=submit] {
-			background-color: #7C9CAC;
-			border-radius: 1px;
-			color: #FFFFFF;
-			cursor: pointer;
-			border: 0;
-			display: table;
-			font-family: "Helvetica Neue", "Arial", sans-serif;
-			font-size: 22px;
-			font-weight: 200;
-			margin: 0 auto;
-			padding: 10px 20px;
-			
-			&:hover {
-				background-color: #D48173;
-			}
 		}
 	}
 }
 
-				
-//////////////////////
-// VIEW FLIGHT PAGE //
-//////////////////////
-.viewFlight {
+.flight {
 	#map {
-		height: 360px;
-		margin: 0 auto 30px auto;
-		width: 640px;
-	}
-}
-		
-.columns {
-	.column { 
-		border-right: 5px solid #FFFFFF;
-		float: left;
-		margin: 30px 0;
-		text-align: center;
-		width: 236px;
-		
-		&:last-child {
-			border-right: 0;
-		}
-	}
-			
-	.label {
-		font-size: 12px;
-		font-weight: bold;
-		text-transform: lowercase;
-	}
-			
-	.value {
-		font-size: 30px;
-		font-weight: 300;
-		line-height: 60px;
-	}
-		
-	.caps {
-		text-transform: uppercase;
+		height: 450px;
+		width: 800px;
 	}
 }
 
 .footer {
-	color: #FFFFFF;
-	font-size: 11px;
-	font-weight: bold;
-	margin: 0 auto;
-	padding: 15px 30px;
-	text-align: center;
-	width: 720px;
+	color: #444444;
+	font-size: 16px;
 
 	a {
 		color: inherit;
@@ -291,30 +135,66 @@ label {
 }
 
 
+/////////////////////////////
+// FORM/CREATE PAGE STYLES //
+/////////////////////////////
+label {
+	cursor: pointer;
+	display: block;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+input[type=text],			
+input[type=email],			
+input[type=number] {
+	border: 0;
+	background-color: #FFFFFF;
+	color: #888888;
+	display: table;
+	font-family: "Georgia", serif;
+	font-size: 15px;
+	margin: 6px auto 0 auto;
+	outline: none;
+	padding: 10px;
+	width: 220px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=number]:focus {
+	color: #222222;
+}
+
+input[type=submit] {
+	background-color: #FFFFFF;
+	color: #12496a;
+	cursor: pointer;
+	border: 0;
+	display: block;
+	font-size: 20px;
+	margin: 30px auto 0 auto;
+	padding: 10px 30px;
+	outline: none;
+}
+
+input[type=submit]:hover {
+	background-color: #12496a;
+	color: #FFFFFF; 
+}
+			
+			
 /////////////////////////
-// HELPERS & UTILITIES //
+// Helpers / Utilities //
 /////////////////////////
 .clearfix:after {
-	clear: both;
-	content: ".";
+	clear:both;
+	content:".";
 	display: block;
 	height: 1px;
 	visibility: hidden;
-}
-
-.shade {
-	position: relative;
-}
-
-.body:hover {
-	.fieldset { 
-		opacity: .5;
-
-		&:hover {
-			opacity: 1;
-		}
-	}
-}
+}		
 		
 .parsley-error-list	{
 	display: none !important;
@@ -323,6 +203,7 @@ label {
 .parsley-error {
 	border: 1px solid #d48173 !important;
 }
+
 
 ///////////////////////////
 // IMPORTS AND EXTERNALS //
