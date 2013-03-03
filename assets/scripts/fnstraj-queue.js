@@ -4,16 +4,7 @@
  * Copyright 2011-2013 Kyle Hotchkiss
  * Released under the GPL
  *
- * Ugh, yes, we have to move our standardized database code over here too.
- * fnstraj/library/database.js (needs conversion to xmlhttpreq/jquery.getJOSN)
- *
  */
-
-var COUCHDB_HOST = "hotchkissmade.cloudant.com";
-var COUCHDB_PORT = 80;
-
-var COUCHDB_URL ="http://" + COUCHDB_HOST + ":" + COUCHDB_PORT
-
 
 jQuery(document).ready(function() {
 

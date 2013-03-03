@@ -21,8 +21,6 @@ var database = {}; // Uncertain if we need namespacing
 
 database.read = function( path, archive, callback ) {
     if ( path.substr(-1) === "/" ) {
-        // CASE: URL is a listing OR view... what shall we do
-
         path += "_all_docs?ascending=true";
         
         if ( archive ) {
@@ -31,10 +29,6 @@ database.read = function( path, archive, callback ) {
     }
     
     jQuery.ajax( db_root + path, {
-    	//
-    	// Issue; couchDB is RESTful, JSONp is not,
-    	// Trying to figure out how to run callback 100%
-    	//
     	dataType: "jsonp", 
     	crossDomain: true,
     	timeout: 2000,

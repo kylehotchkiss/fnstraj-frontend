@@ -9,7 +9,7 @@
 
  include "includes/header.php"; 
 ?>
-
+			<script src="/assets/scripts/database.js"></script>
 			<script src="http://code.highcharts.com/highcharts.js"></script>
 			<script src="/assets/scripts/fnstraj-statistics.js"></script>
 			

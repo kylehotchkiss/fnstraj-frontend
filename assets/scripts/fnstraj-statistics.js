@@ -5,12 +5,6 @@
  * Released under the GPL
  *
  */
- 
-var COUCHDB_HOST = "hotchkissmade.cloudant.com";
-var COUCHDB_PORT = 80;
-
-var COUCHDB_URL ="http://" + COUCHDB_HOST + ":" + COUCHDB_PORT
-
 
 jQuery(document).ready(function() {
 
