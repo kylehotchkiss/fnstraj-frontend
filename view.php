@@ -39,7 +39,7 @@
 				/////////////////////////////////////////
 				// GENERATE JS FRIENDLY LIST OF POINTS //
 				/////////////////////////////////////////
-				foreach ( $flightData->prediction as $frame ) {
+				foreach ( $flightData->prediction[0] as $frame ) {
 					$frames .= "[" . $frame->longitude . ", " . $frame->latitude . "], ";
 				}
 				
@@ -48,7 +48,7 @@
 ?>
 			<script src="/assets/scripts/leaflet.js"></script>		
 			
-			<div class="introduction">
+			<div class="light" id="flightSummary">
 				<div class="wrapper">
 				<?php if ( $flightData->parameters->meta->program != "" && $flightData->parameters->meta->name != "" ) { ?>
 				
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 			
-			<div class="flight">
+			<div class="dark" id="flightView">
 				<div class="wrapper">
 					<script>
 			  			jQuery(document).ready(function() {
@@ -95,7 +95,7 @@
 			  		</script>
 				
 			  		<h2>
-			  			Flight Prediction Map
+			  			Predicted Flight Path
 			  		</h2>
 				
 				  	<div id="map"></div>

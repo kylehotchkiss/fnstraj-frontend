@@ -48,8 +48,8 @@ p {
 	padding-top: 60px; /* GLITCH */
 				
 	.column {
-		float:left;
-		width:260px;
+		float: left;
+		width: 260px;
 	}
 }
 
@@ -66,7 +66,7 @@ p {
 	}
 
 	.wrapper {
-		padding: 10px 0;
+		padding: 15px 0;
 	}
 	
 	.logo {
@@ -85,11 +85,11 @@ p {
 	
 }
 		
-.header, .introduction, .queue, .stepTwo, .stepFour { 
+.header, .light { 
 	background-color: #1A6795;
 }
 			
-.flight, .stepOne, .stepThree, {
+.dark {
 	background-color: #12496a;
 }
 			
@@ -118,11 +118,9 @@ p {
 	}
 }
 
-.flight {
-	#map {
-		height: 450px;
-		width: 800px;
-	}
+#map {
+	height: 450px;
+	width: 800px;
 }
 
 .footer {
@@ -150,6 +148,8 @@ input[type=text],
 input[type=email],			
 input[type=number] {
 	border: 0;
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
 	background-color: #FFFFFF;
 	color: #888888;
 	display: table;
@@ -160,6 +160,7 @@ input[type=number] {
 	padding: 10px;
 	width: 220px;
 }
+
 
 input[type=text]:focus,
 input[type=email]:focus,
@@ -196,17 +197,17 @@ input[type=submit]:hover {
 	visibility: hidden;
 }		
 		
-.parsley-error-list	{
+.parsley-error-list, .garlic-swap {
 	display: none !important;
 }
 			
 .parsley-error {
-	border: 1px solid #d48173 !important;
+	border: 1px solid #FF0000 !important;
 }
 
 
 ///////////////////////////
 // IMPORTS AND EXTERNALS //
 ///////////////////////////
-@import "mobile.sass";
+@import "mobile.scss";
 @import "leaflet.sass";

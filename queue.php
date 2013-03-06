@@ -86,13 +86,13 @@
 		<script src="/assets/scripts/database.js"></script>
 		<script src="/assets/scripts/fnstraj-queue.js"></script>
 		
-		<div class="queue">
+		<div class="light">
 			<div class="wrapper">
 				<h2>
 					Added to Prediction Queue
 				</h2>
 				<p>
-					Your flight has been added to the queue. It is currently item number <span class="queueOrder">???</span>.<br />When your prediction is complete, this page will redirect automatically<br /><?php if ( $_POST["email"] != "" ) { ?> and you will receive an email at <strong><?php echo $_POST["email"] ?></strong><br /><?php } ?> Or you can bookmark <a href="http://fnstraj.org/view/<?php echo $flightID; ?>">http://fnstraj.org/view/<?php echo $flightID; ?></a> and come back later!
+					Your flight has been added to the queue. It is currently item number <span id="queueOrder">???</span>.<br />When your prediction is complete, this page will redirect automatically<br /><?php if ( $_POST["email"] != "" ) { ?> and you will receive an email at <strong><?php echo $_POST["email"] ?></strong><br /><?php } ?> Or you can bookmark <a href="http://fnstraj.org/view/<?php echo $flightID; ?>">http://fnstraj.org/view/<?php echo $flightID; ?></a> and come back later!
 				</p>
 			</div>
 		</div>

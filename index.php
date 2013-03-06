@@ -19,7 +19,7 @@
 		
 		<input type="hidden" name="interfaceKey" value="z6kDgFNJX977di" />
 		
-		<div class="introduction">
+		<div class="light" id="introduction">
 			<div class="wrapper">
 				<h1>
 					Welcome to <em>fnstraj.org</em>
@@ -54,10 +54,10 @@
 			</div>
 		</div>
 			
-		<div class="stepOne">
+		<div class="dark" id="stepOne">
 			<div class="wrapper">
 				<h2>
-					Prediction Intension & Weather Model Selection
+					Weather Model Selection
 				</h2>
 				<p>
 				 	There are several different weather models to base your prediction off of. <br /> Choose one based on what you're using your prediction for. <br />When in doubt, just choose the RAP model - it works great!
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		
-		<div class="stepTwo">
+		<div class="light" id="stepTwo">
 			<div class="wrapper">
 				<h2>
 					Launch Location
@@ -93,19 +93,19 @@
 				<div class="columns clearfix">
 					<div class="column">
 						<label for="latitude">
-							Latitude (decimal-degrees)
+							Latitude* (decimal-degrees)
 						</label>
 						<input type="number" name="latitude" min="24.52083" max="49.38447" step=".00001" data-trigger="keyup" required />
 					</div>
 					<div class="column">
 						<label for="longitude">
-							Longitude (decimal-degrees)
+							Longitude* (decimal-degrees)
 						</label>
 						<input type="number" name="longitude" min="-124.73305" max="-66.94977" step=".00001" data-trigger="keyup" required />
 					</div>
 					<div class="column">
 						<label for="altitude">
-							Altitude (Metres)
+							Altitude* (Metres)
 						</label>
 						<input type="number" name="altitude" min="0" max="44307" step="1" data-trigger="keyup" required />
 					</div>
@@ -113,7 +113,7 @@
 			</div>
 		</div>
 		
-		<div class="stepThree">
+		<div class="dark" id="stepThree">
 			<div class="wrapper">
 				<h2>
 					Balloon, Payload, and Parachute Details
@@ -124,19 +124,19 @@
 				<div class="columns clearfix">
 					<div class="column">
 						<label for="lift">
-							Free Lift (grams)
+							Free Lift* (grams)
 						</label>
 						<input type="number" name="lift" min="0" data-trigger="keyup" required />
 					</div>
 					<div class="column">
 						<label for="burst">
-							Burst Altitude (metres)
+							Burst Altitude* (metres)
 						</label>
 						<input type="number" name="burst" min="0" max="44307" data-trigger="keyup" required />
 					</div>
 					<div class="column">
 						<label for="launchRadius">
-							Balloon Radius at Launch (metres)
+							Balloon Radius at Launch* (metres)
 						</label>
 						<input type="number" name="launchRadius" min="0" data-trigger="keyup" required />
 					</div>
@@ -145,28 +145,37 @@
 				<div class="columns clearfix">
 					<div class="column">
 						<label for="latitude">
-							Balloon Radius at Burst (metres)
+							Balloon Radius at Burst* (metres)
 						</label>
 						<input type="number" name="burstRadius" min="0" data-trigger="keyup" required />
 					</div>
 					<div class="column">
 						<label for="longitude">
-							Payload Weight (grams)
+							Payload Weight* (grams)
 						</label>
 						<input type="number" name="weight" min="0" data-trigger="keyup" required />
 					</div>
 					<div class="column">
 						<label for="altitude">
-							Parachute Radius (metres)
+							Parachute Radius* (metres)
 						</label>
 						<input type="number" name="chuteRadius" min="0" data-trigger="keyup" required />
 					</div>
 				</div>
+				
+				<p style="margin:60px 0;">
+					Live Tracking via SPOT Satellite Messenger <br /> Enter your SPOT Shared Page ID to live track your flight
+				</p>
+				
+				<label for="spot">
+					SPOT Shared Page ID
+				</label>
+				<input type="text" name="spot" style="width:440px;" />
 
 			</div>
 		</div>
 		
-		<div class="stepFour">
+		<div class="light" id="stepFour">
 			<div class="wrapper">
 				<h2>
 					Disclaimers... then predict Flight Path!
