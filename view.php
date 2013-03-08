@@ -7,7 +7,7 @@
  *
  */ 
   
-	if ( isset($_GET["id"]) ) {
+	if ( isset($_GET["id"]) && $_GET["id"] !== "" ) {
 		////////////////////
 		// Initalize View //
 		////////////////////
@@ -44,7 +44,6 @@
 				}
 				
 				$frames = substr( $frames, 0, strlen($frames) - 2 ); 
-		
 ?>
 			<script src="/assets/scripts/leaflet.js"></script>		
 			
@@ -62,7 +61,7 @@
 					<p>
 						Your flight is estimated to fly <?php echo intval($flightData->analysis->distance); ?>km at <?php echo intval($flightData->analysis->heading); ?>&deg;. <br /> It's predicted to land in <?php echo $flightData->parameters->points->landing->name ?>.
 					</p><p>
-						You can download this flight for <a href="/export/kml/<?= $flightID; ?>">Google Earth</a>, <br /> in <a href="/export/json/<?= $flightID; ?>">JSON format</a>, or in <a href="/export/csv/<?= $flightID; ?>">CSV Format</a> for your records.
+						You can download this flight for <a href="/export/kml/<?php echo $flightID; ?>">Google Earth</a>, <br /> in <a href="/export/json/<?php echo $flightID; ?>">JSON format</a>, or in <a href="/export/csv/<?php echo $flightID; ?>">CSV Format</a> for your records.
 					</p>
 				</div>
 			</div>
@@ -109,12 +108,22 @@
 				// CASE: FLIGHT DOES NOT EXIST //
 				/////////////////////////////////
 ?>
-				<script src="/assets/scripts/database.js"></script>
-				<script src="/assets/scripts/fnstraj-queue.js"></script>
+			<script src="/assets/scripts/database.js"></script>
+			<script src="/assets/scripts/fnstraj-queue.js"></script>
+			
+			<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />			
+			
+			<div class="light">
+				<div class="wrapper">
 	
-				Flight does not {yet} exist - If you just created it, this page will update when it is complete!
+					<h2>Flight Not Found</h2>
 				
-				<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />
+					<p>
+						The flight you have requested has not been found <br />
+						(If it is currently being processed, you will be redirected)
+					</p>
+				</div>
+			</div>
 <?php
 			}
 		} else {

@@ -69,7 +69,7 @@
 				<coordinates>
 <?php						
 
-						foreach ( $flightData->prediction as $frame ) {
+						foreach ( $flightData->prediction[0] as $frame ) {
 							echo "				    " . $frame->longitude . "," . $frame->latitude . "," . $frame->altitude . "\n";
 						}
 
