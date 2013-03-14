@@ -7,7 +7,7 @@
  *
  */ 
   
-	if ( isset($_GET["id"]) ) {
+	if ( isset($_GET["id"]) && $_GET["id"] !== "" ) {
 		////////////////////
 		// Initalize View //
 		////////////////////
@@ -39,101 +39,67 @@
 				/////////////////////////////////////////
 				// GENERATE JS FRIENDLY LIST OF POINTS //
 				/////////////////////////////////////////
-				foreach ( $flightData->prediction as $frame ) {
+				foreach ( $flightData->prediction[0] as $frame ) {
 					$frames .= "[" . $frame->longitude . ", " . $frame->latitude . "], ";
 				}
 				
 				$frames = substr( $frames, 0, strlen($frames) - 2 ); 
-		
 ?>
-				<script src="/assets/scripts/leaflet.js"></script>		
+			<script src="/assets/scripts/leaflet.js"></script>		
+			
+			<div class="light" id="flightSummary">
+				<div class="wrapper">
 				<?php if ( $flightData->parameters->meta->program != "" && $flightData->parameters->meta->name != "" ) { ?>
 				
-					<h3>Flight Prediction for <?php echo $flightData->parameters->meta->program . " " . $flightData->parameters->meta->name; ?> </h3>
+					<h2>Flight Prediction for <?php echo $flightData->parameters->meta->program . " " . $flightData->parameters->meta->name; ?> </h2>
 				
 				<?php } else { ?>
 				
-					<h3>Flight Prediciton</h3>
+					<h2>Flight Prediction</h2>
 				
 				<?php } ?>
-				
-				<div class="viewFlight">
+					<p>
+						Your flight is estimated to fly <?php echo intval($flightData->analysis->distance); ?>km at <?php echo intval($flightData->analysis->heading); ?>&deg;. <br /> It's predicted to land in <?php echo $flightData->parameters->points->landing->name ?>.
+					</p><p>
+						You can download this flight for <a href="/export/kml/<?php echo $flightID; ?>">Google Earth</a>, <br /> in <a href="/export/json/<?php echo $flightID; ?>">JSON format</a>, or in <a href="/export/csv/<?php echo $flightID; ?>">CSV Format</a> for your records.
+					</p>
+				</div>
+			</div>
+			
+			<div class="dark" id="flightView">
+				<div class="wrapper">
 					<script>
-				  		jQuery(document).ready(function() {
-				  			var points = [{
+			  			jQuery(document).ready(function() {
+			  				var points = [{
 				  				"type": "LineString",
 				  				"coordinates": [
-				  					<?php echo $frames; ?>
-				  				]
-				  			}];
-				  			
-				  			var linestyle = {
-				  			    "color": "#FFFFFF",
-				  			    "weight": 7,
-				  			    "opacity": 1
-				  			};
-				  		
-							var map = new L.Map("map", { dragging: false, touchZoom: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, zoomControl: false, attributionControl: false, trackResize: false });
-							
-					  		map.setView(new L.LatLng(<?php echo $flightData->analysis->midpoint->latitude ?>, <?php echo $flightData->analysis->midpoint->longitude ?>), 8);
-						  	
-						  	L.tileLayer('http://api.tiles.mapbox.com/v3/hotchkissmade.map-atljnf88/{z}/{x}/{y}.png').addTo(map);
-						  
-						  	L.geoJson(points, { style: linestyle }).addTo(map); 
-				  		});
-					</script>
+			  						<?php echo $frames; ?>
+			  					]
+			  				}];
+			  			
+			  				var linestyle = {
+			  			    	"color": "#FFFFFF",
+			  			    	"weight": 7,
+			  			    	"opacity": 1
+			  			    };
+			  		
+			  			    var map = new L.Map("map", { dragging: false, touchZoom: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false, zoomControl: false, attributionControl: false, trackResize: false });
+						
+			  			    map.setView(new L.LatLng(<?php echo $flightData->analysis->midpoint->latitude ?>, <?php echo $flightData->analysis->midpoint->longitude ?>), 8);
+					  	
+			  			    L.tileLayer('http://api.tiles.mapbox.com/v3/hotchkissmade.map-atljnf88/{z}/{x}/{y}.png').addTo(map);
+					  
+			  			    L.geoJson(points, { style: linestyle }).addTo(map); 
+			  			});
+			  		</script>
 				
-					<div id="map"></div>
-					
-					<div class="analysis">
-					
-						<div class="overview columns clearfix">
-						
-							<div class="distance column">
-
-								<div class="label">
-									Distance Travelled
-								</div>
-							
-								<div class="value">
-									<?php echo intval($flightData->analysis->distance); ?>km
-								</div>
-						
-							</div>
-							
-							<div class="heading column">
-							
-								<div class="label">
-									Final Heading
-								</div>
-								
-								<div class="value">
-									<?php echo intval($flightData->analysis->heading); ?>&deg;
-								</div>
-							
-							</div>
-						
-						
-							<div class="column">
-							
-								<div class="label">
-									Landing Location
-								</div>
-								
-								<div class="value">
-									<?php echo $flightData->parameters->points->landing->name ?>
-								</div>
-							
-							</div>
-						</div>
-					
-						<div class="exports">
-							<a href="/export/kml/<?= $flightID; ?>">View in Google Earth</a>
-							<a href="/export/json/<?= $flightID; ?>">Download JSON export</a>
-						</div>
-					
-					</div>
+			  		<h2>
+			  			Predicted Flight Path
+			  		</h2>
+				
+				  	<div id="map"></div>
 				</div>
+			</div>
 
 <?php			
 			
@@ -142,12 +108,22 @@
 				// CASE: FLIGHT DOES NOT EXIST //
 				/////////////////////////////////
 ?>
-				<script src="/assets/scripts/database.js"></script>
-				<script src="/assets/scripts/fnstraj-queue.js"></script>
+			<script src="/assets/scripts/database.js"></script>
+			<script src="/assets/scripts/fnstraj-queue.js"></script>
+			
+			<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />			
+			
+			<div class="light">
+				<div class="wrapper">
 	
-				Flight does not {yet} exist - If you just created it, this page will update when it is complete!
+					<h2>Flight Not Found</h2>
 				
-				<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />
+					<p>
+						The flight you have requested has not been found <br />
+						(If it is currently being processed, you will be redirected)
+					</p>
+				</div>
+			</div>
 <?php
 			}
 		} else {

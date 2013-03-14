@@ -1,11 +1,11 @@
 # MediaTemple is rediculous
-Options +FollowSymLinks
+Options +FollowSymLinks -Multiviews
 
 # REWRITE RULES
 RewriteEngine On
 
-# View Page	- /view/%id%
-RewriteRule ^view/([^/]*)$ /view.php?id=$1 [L]
+# View Page
+RewriteRule ^view/([^/]*)$ /view.php?id=$1 [QSA,L]
 
-# Export Page - /export/%format%/%id%
-RewriteRule ^export/([^/]*)/([^/]*)$ /export.php?format=$1&id=$2 [L]
+# Export Page - /export/
+RewriteRule ^export/([^/]*)/([^/]*)$ /export.php?format=$1&id=$2 [L,QSA]

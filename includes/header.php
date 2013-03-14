@@ -10,22 +10,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>
-		 	<?php if ( isset($pageTitle) ) { echo $pageTitle . " | "; } ?>fnstraj
-		</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<meta name="description" content="fnstraj is a balloon trajectory and analysis service." />
 		<meta name="keywords" content="trajectory, balloon, flight, near space, service" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<link href="/assets/styles/fnstraj.css" rel="stylesheet" />	
-		<link href="/assets/styles/symbolset.css" rel="stylesheet" />
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="/assets/scripts/ss-standard.js"></script>
-		<script type="text/javascript" src="//use.typekit.net/zpr0vqp.js"></script>
+		<title>
+			<?php if ( isset( $pageTitle ) ) { echo $pageTitle . " | "; } ?>fnstraj.org
+		</title>
+		<link href="/assets/styles/fnstraj.css" rel="stylesheet" />
+		<link href="/assets/images/favicon.png" rel="shortcut icon" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="//use.typekit.net/ses4lbp.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body>
-		<div class="wrapper clearfix">
-			<div class="header">
-				<a href="/"><img src="/assets/images/logo2.png" /></a>
+		<div class="header">
+			<div class="wrapper clearfix">
+				<div class="logo">
+					<a href="/">fnstraj.org</a>
+				</div>
+				
+				<ul class="links">
+					<li>
+						<a href="/about.php">about</a>
+					</li><li>
+						<a href="/donate.php">donate</a>
+					</li><li>
+						<a href="http://flynearspace.org/">fly near space project</a>
+					</li>
+				</ul>
 			</div>
-			<div class="body">
+		</div>

@@ -1,0 +1,84 @@
+/**
+ *
+ * fnstraj frontend | mobile stylesheet
+ * Copyright 2011-2013 Kyle Hotchkiss
+ * Released under the GPL
+ *
+ */
+ 
+@media all and (max-width: 786px) {
+	
+}
+
+
+@media all and (max-width: 481 px) {
+	body {
+		font-size: 15px;
+	}
+	
+	h1, h2, h2, h2, h5, h6, p {
+		margin: 0 0 16px 0;
+	}
+
+	.wrapper {
+		padding: 30px 10px;
+		width: 460px;
+	}
+	
+	.columns {
+		padding-top: 32px;
+				
+		.column {
+			display: table;
+			float: none;
+			margin: 0 auto 32px auto;
+		}
+	}
+	
+	.columns:nth-of-type(2) {
+		padding-top: 0;
+	}
+	
+	.intensions {
+		margin: 16px auto 0 auto;
+			
+		input[type=radio] {
+			margin: 15px;
+		}
+						
+		label {
+			font-size: 18px;
+			line-height: 45px;
+				
+			span {
+				font-size: 10px;
+			}
+		}
+	}
+
+	input[type=text],			
+	input[type=email],			
+	input[type=number] {
+		width: 400px;
+	}
+	
+	.footer {
+		font-size: 10px;
+	}
+	
+	
+}
+
+
+@media all and (max-width: 321px) {
+	.wrapper {
+		width: 300px;
+	}
+	
+	.columns {
+		.column {
+			float: none;
+			padding: 10px 0 0 0;
+		}
+	}
+}
