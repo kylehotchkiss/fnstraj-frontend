@@ -4,6 +4,8 @@
  * Copyright 2011-2013 Kyle Hotchkiss
  * Released under the GPL
  *
+ * http://www.colourlovers.com/palette/1598431/Unclean
+ *
  */
 body {
   color: #FFFFFF;
@@ -14,16 +16,15 @@ body {
   -webkit-text-size-adjust: none;
   text-rendering: optimizeLegibility; }
 
-a {
-  color: inherit; }
-
 h1, h2, h2, h2, h5, h6, p {
   margin: 0 0 32px 0;
   text-align: center; }
 
 p {
   line-height: 1.6em; }
-  p:last-of-type {
+  p a {
+    color: inherit; }
+  p p:last-of-type {
     margin: 0; }
 
 .wrapper {
@@ -38,27 +39,18 @@ p {
     float: left;
     width: 260px; }
 
-.header {
-  font-size: 11px;
-  font-weight: bold; }
-  .header a {
-    text-decoration: none; }
-  .header .wrapper {
-    padding: 15px 0; }
-  .header .logo {
-    float: left; }
-  .header ul {
-    float: right;
-    margin: 0; }
-    .header ul li {
-      display: inline;
-      margin-left: 15px; }
+.introduction, .queue {
+  padding-top: 120px; }
 
-.header, .light {
+.introduction, .queue, .stepTwo, .stepFour {
   background-color: #1A6795; }
 
-.dark {
+.flight, .stepOne, .stepThree {
   background-color: #12496a; }
+
+.flight .map {
+  height: 338px;
+  width: 600px; }
 
 .intensions {
   display: table;
@@ -78,16 +70,6 @@ p {
       font-size: 13px;
       font-weight: 600; }
 
-#map {
-  height: 450px;
-  width: 800px; }
-
-.footer {
-  color: #444444;
-  font-size: 16px; }
-  .footer a {
-    color: inherit; }
-
 label {
   cursor: pointer;
   display: block;
@@ -99,8 +81,6 @@ input[type=text],
 input[type=email],
 input[type=number] {
   border: 0;
-  border-bottom: 1px solid #FFFFFF;
-  border-right: 1px solid #FFFFFF;
   background-color: #FFFFFF;
   color: #888888;
   display: table;
@@ -131,6 +111,12 @@ input[type=submit]:hover {
   background-color: #12496a;
   color: #FFFFFF; }
 
+.footer {
+  color: #444444;
+  font-size: 16px; }
+  .footer a {
+    color: inherit; }
+
 .clearfix:after {
   clear: both;
   content: ".";
@@ -138,64 +124,19 @@ input[type=submit]:hover {
   height: 1px;
   visibility: hidden; }
 
-.parsley-error-list, .garlic-swap {
+.parsley-error-list {
   display: none !important; }
 
 .parsley-error {
-  border: 1px solid #FF0000 !important; }
+  border: 1px solid #d48173 !important; }
 
-/**
+/*
  *
  * fnstraj frontend | mobile stylesheet
  * Copyright 2011-2013 Kyle Hotchkiss
  * Released under the GPL
  *
  */
-@media all and (max-width: 481 px) {
-  body {
-    font-size: 15px; }
-
-  h1, h2, h2, h2, h5, h6, p {
-    margin: 0 0 16px 0; }
-
-  .wrapper {
-    padding: 30px 10px;
-    width: 460px; }
-
-  .columns {
-    padding-top: 32px; }
-    .columns .column {
-      display: table;
-      float: none;
-      margin: 0 auto 32px auto; }
-
-  .columns:nth-of-type(2) {
-    padding-top: 0; }
-
-  .intensions {
-    margin: 16px auto 0 auto; }
-    .intensions input[type=radio] {
-      margin: 15px; }
-    .intensions label {
-      font-size: 18px;
-      line-height: 45px; }
-      .intensions label span {
-        font-size: 10px; }
-
-  input[type=text],
-  input[type=email],
-  input[type=number] {
-    width: 400px; }
-
-  .footer {
-    font-size: 10px; } }
-@media all and (max-width: 321px) {
-  .wrapper {
-    width: 300px; }
-
-  .columns .column {
-    float: none;
-    padding: 10px 0 0 0; } }
 /*
  *
  * From the Leaflet project.

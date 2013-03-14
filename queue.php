@@ -83,46 +83,21 @@
 				// CASE: SUCCESSFUL DATABASE WRITE //
 				/////////////////////////////////////
 ?>
-			<script src="/assets/scripts/database.js"></script>
-			<script src="/assets/scripts/fnstraj-queue.js"></script>
-			<h3>
-				Added to Queue 
-			</h3>
-			<div class="columns clearfix">
-				
-				<div class="column">
-					<div class="label">
-						Weather Model
-					</div>
-					<div class="value caps">
-						<?php echo $content["parameters"]["options"]["model"]; ?>
-					</div>
-				</div>
-				
-				<div class="column">
-					<div class="label">
-						# in Queue
-					</div>
-					<div class="value" id="queueOrder">
-						??
-					</div>
-				</div>
-				
-				<div class="column">
-					<div class="label">
-						Estimated Time
-					</div>
-					<div class="value" id="estimatedTime">
-						??
-					</div>
-				</div>
-				
+		<script src="/assets/scripts/database.js"></script>
+		<script src="/assets/scripts/fnstraj-queue.js"></script>
+		
+		<div class="light">
+			<div class="wrapper">
+				<h2>
+					Added to Prediction Queue
+				</h2>
+				<p>
+					Your flight has been added to the queue. It is currently item number <span id="queueOrder">???</span>.<br />When your prediction is complete, this page will redirect automatically<br /><?php if ( $_POST["email"] != "" ) { ?> and you will receive an email at <strong><?php echo $_POST["email"] ?></strong><br /><?php } ?> Or you can bookmark <a href="http://fnstraj.org/view/<?php echo $flightID; ?>">http://fnstraj.org/view/<?php echo $flightID; ?></a> and come back later!
+				</p>
 			</div>
-			<p>
-				When your prediction is complete, this page will redirect automatically<?php if ( $_POST["email"] != "" ) { ?> and you will receive an email at <strong><?php echo $_POST["email"] ?></strong><?php } ?>. Or you can bookmark <a href="http://fnstraj.org/view/<?php echo $flightID; ?>">http://fnstraj.org/view/<?php echo $flightID; ?></a> and come back later!
-			</p>
-			
-			<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />
+		</div>
+	
+		<input type="hidden" name="flightID" id="flightID" value="<?php echo $flightID; ?>" />
 
 <?php						
 			} else {
