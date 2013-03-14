@@ -29,7 +29,7 @@
 					<a href="/">fnstraj.org</a>
 				</div>
 				
-				<!--<ul class="links">
+				<ul class="links">
 					<li>
 						<a href="/about.php">about</a>
 					</li><li>
@@ -37,6 +37,6 @@
 					</li><li>
 						<a href="http://flynearspace.org/">fly near space project</a>
 					</li>
-				</ul>-->
+				</ul>
 			</div>
 		</div>
