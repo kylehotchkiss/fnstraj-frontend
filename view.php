@@ -59,7 +59,7 @@
 				
 				<?php } ?>
 					<p>
-						Your flight is estimated to fly <?php echo intval($flightData->analysis->distance); ?>km at <?php echo intval($flightData->analysis->heading); ?>&deg;. <br /> It's predicted to land in <?php echo $flightData->parameters->points->landing->name ?>.
+						Your flight is estimated to fly <?php echo intval($flightData->analysis->distance); ?>km at <?php echo intval($flightData->analysis->heading); ?>&deg;. <br /> It's predicted to land in <?php echo $flightData->analysis->points->landing->name ?>.
 					</p><p>
 						You can download this flight for <a href="/export/kml/<?php echo $flightID; ?>">Google Earth</a>, <br /> in <a href="/export/json/<?php echo $flightID; ?>">JSON format</a>, or in <a href="/export/csv/<?php echo $flightID; ?>">CSV Format</a> for your records.
 					</p>
